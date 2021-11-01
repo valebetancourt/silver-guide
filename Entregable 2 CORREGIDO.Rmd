@@ -24,6 +24,7 @@ Por último, por participación ciudadana entendemos algo  “global,  una  nece
 
 Ahora bien, respecto a la bilbiografía revisada, notamos que los factores asociados a la problemática son la falta de integración de las organizaciones de personas discapacitadas a programas estatales destinados para estas. Por otro lado, otro factor sería la falta de accesibilidad que se genera al no tener políticas públicas que cubran las necesidades de esta población, lo cual puede ser causado por lo primero acerca de no tomar en cuenta a la población en cuestión para elaborar políticas que deben beneficiarlos.
 
+Para esta investigación, la cual se basa en los datos obtenidos de la Primera Encuesta Nacional de Discapacidad 2012 del INEI, planteamos la siguiente pregunta de investigación: ¿Qué programas sociales son los que tienen más usuarios que poseen una participación ciudadana más activa?”, para la cuál las hipótesis tentativas planteadas es que aquellos usuarios de los programas sociales "Juntos" y "Jóvenes a la obra" son los que poseen una participación ciudadana más activa y que la población discapacitada que es usuaria de programas sociales tiene una participación ciudadana más activa que las que no son participes de algún programa social.
 
 Bibliografía:
 
@@ -36,19 +37,11 @@ Instituto Nacional de Estadística e Informatica (2019). Encuesta Nacional Hogar
 Vidal-García, J (2021). LA PARTICIPACION CIUDADANA DE LAS PERSONAS CON DISCAPACIDAD. Biotempo, 18 (1), 11-20.
 https://revistas.urp.edu.pe/index.php/Biotempo/article/view/3767/4747
 
-
-Pregunta de investigación: ¿Qué programas sociales son los que tienen más usuarios que poseen una participación ciudadana más activa?
-
 Objetivo general: Hallar el o los programas sociales cuyos usuarios sean posean una participación ciudadana más activa a comparación con otros programas sociales del mismo grupo
 Objetivo específico 1: Hallar en qué medida los usuarios de los programas sociales Juntos y Jóvenes a la obra poseen una participacíón ciudadana más activa
 
 Variable dependiente: Participación ciudadana
 Variable independiente: Pertenencia a programas sociales
-
-
-Hipótesis tentativas:
-- Aquellos usuarios de los programas sociales "Juntos" y "Jóvenes a la obra" son los que poseen una participación ciudadana más activa.
-- La población discapacitada que es usuaria de programas sociales tiene una participación ciudadana más activa que las que no son participes de algún programa social
 
 #VARIABLE DEPENDIENTE: PARTICIPACIÓN CIUDADANA
 ```{r}
