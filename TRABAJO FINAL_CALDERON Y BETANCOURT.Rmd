@@ -1,0 +1,398 @@
+---
+title: "TRABAJO FINAL"
+author: "Sebastian Calderón y Valeria Betancourt"
+date: "28/10/2021"
+output: 
+ rmdformats::readthedown:
+ code_folding: show
+ self_contained: true
+ thumbnails: false
+ lightbox: false
+ pkgdown:
+ as_is: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(rmdformats)
+```
+
+```{r}
+library(rio)
+data=import("CAP_900_INTEGRACION.sav")
+
+```
+
+Link de repositorio en github: https://github.com/valebetancourt/silver-guide.git
+Link de video de youtube: https://youtu.be/Z2CzNUVuaIQ
+
+# Introducción
+
+La situación de las personas discapacitadas en el Perú continúa siendo un problema latente y poco tratado en las medidas estatales. En el Perú, aproximadamente el 5,2% de la población (1 millón 575 mil personas) presenta algún tipo de discapacidad (INEI, 2013). Referente a eso Francke y Cordero mencionan que muchas personas pertenecientes a esta población se encuentran en esa condición “debido a que la sociedad peruana no ha respondido ante esa situación adaptándose de manera tal de reducir los problemas que tales disfuncionamientos generan” (Francke y Cordero, 2005, p. 5). Existen menciones a esta población dentro del ámbito constitucional, como el Artículo 7 de la Constitución del 1993 que determina que “la persona incapacitada para velar por sí misma a causa de una deficiencia física o mental tiene derecho al respeto de su dignidad y a un régimen legal de protección, atención, readaptación y seguridad” (Constitución Política del Perú, Art. 7, 1993), además del artículo 35 que menciona la existencia de una “bonificación en concursos de méritos y estabilidad laboral relativa” que les da el derecho de obtener una bonificación del 20% sobre la calificación que hayan obtenido (Constitución Política del Perú, Art. 35, 1993). 
+
+Sin embargo, el Estado al haber propuesto políticas públicas para esta población, usualmente ha fallado. Tomando como ejemplo el “Plan de Igualdad de Oportunidades” propuesto al rededor del 2005, que trataba de ayudar a la población discapacitada para que se aproveche su potencial y mejoren su situación, no tuvo buenos resultados. Siguiendo la línea de Francke y Cordero (2005, p. 13), este no tuvo una participación amplia de la población en cuestión, ni hubo una relación entre las organizaciones de personas discapacitadas con el Estado, por lo cual este plan terminó siendo estado-céntrico, sin que la población discapacitada tenga un rol protagónico para expresar sus necesidades y demás. 
+
+En la actualidad, esta problemática persiste. Respecto a la data de la Encuesta Nacional de Hogares (ENAHO) del 2019, mientras que el 55.2% de la población discapacitada pertenece a la Población Económicamente Inactiva (PEI), dentro de la población sin discapacidad solo hay un 25,9% (INEI, 2019). Esto refleja una situación alarmante en el país respecto a las políticas públicas para la población discapacitada, debido a que podría reflejar una falta de implementación de recursos para el acceso de estas a un ambiente laboral. Por otro lado, la misma encuesta menciona que el 43% de personas con discapacidad no tiene acceso a servicios de comunicación, y que el 26.4% son parte de la población analfabeta (INEI, 2019). 
+
+Por último, por participación ciudadana entendemos algo  “global,  una  necesidad  y  un  derecho  humano  que  va  unido  a  la  satisfacción  de  las necesidades  sociales  y  vitales” (Vidal-García, 2021, p. 13). Esto conlleva a la ciudadanía a participar en los  procesos  de  toma  de  decisiones,  asuntos colectivos  o  individuales  en  política. Según Vidal-García (2021: 13) la participación ciudadana tiene la capacidad de conectarse con la participación política de distintos colectivos con discapacidad, cuya mejora es esencial para el desarrollo de la democracia e importante en otros aspectos de la sociedad.
+
+Ahora bien, respecto a la bilbiografía revisada, notamos que los factores asociados a la problemática son la falta de integración de las organizaciones de personas discapacitadas a programas estatales y sociales destinados para estas. Por otro lado, otro factor sería la falta de accesibilidad que se genera al no tener políticas públicas que cubran las necesidades de esta población, lo cual puede ser causado por lo primero acerca de no tomar en cuenta a la población en cuestión para elaborar políticas que deben beneficiarlos. Es por esto que en esta investigación se propone encontrar si estos programas están siendo útiles o no para el desenvolvimiento ciudadano de esta población.
+
+De esta manera, la pregunta planteada para esta investigación, la cual se basa en los datos obtenidos de la Primera Encuesta Nacional de Discapacidad 2012 del INEI, planteamos la siguiente pregunta: ¿Qué programas sociales son los que tienen más usuarios que poseen una participación ciudadana más activa?”, para la cual tenemos como *variable dependiente a la Participación ciudadana en Agrupaciones de Personas con Discapacidad* y como *variable independiente: Pertenencia a programas sociales*.
+
+Es importante observar y hacer estudios sobre la población con discapacidad para explorar diferentes mecanismos para poder defender y asegurar sus derechos civiles, políticos, económicos, sociales y culturales. Su participación en diversas Agrupaciones es una vía para la participación política activa y para promover la inclusión de políticas en la agenda pública en favor de esta población en situación de vulnerabilidad. Si bien los esfuerzos se han ido sumando, sigue existiendo una gran oportunidad de mejora. Una mayor participación política por parte de la población con discapacidad promoverá que sea su propia voz la que pueda erigir y hacer respetar sus derechos. 
+
+Las hipótesis planteadas es que aquellos usuarios del programa social Programa nacional de asistencia alimentaria PRONAA Escolar son los que poseen una participación ciudadana más activa. La segunda hipótesis es que la población discapacitada que es usuaria de programas sociales tiene una participación ciudadana más activa en las Agrupaciones de Personas con Discapacidad -las cuales, según Sociedad y Discapacidad, una organizacion no gubernamental dirigida a la población con discapacidad, buscan garantizar los derechos para una vida plena de la población con discapacidad (SODIS, 2021)- que las que no son partícipes de algún programa social. 
+
+Aparte, como objetivo general nos planteamos hallar el o los programas sociales cuyos usuarios sean posean una participación ciudadana más activa en las Agrupaciones de Personas con Discapacidad a comparación con otros programas sociales del mismo grupo, así como también definimos uno específico que es hallar en qué medida los usuarios del programa social Juntos poseen una participacíón ciudadana más activa en las Agrupaciones de Personas con Discapacidad.
+
+
+Bibliografía:
+
+Constitución Política del Perú [Const] Art. 2 y Art. 35, 29 de diciembre de 1993.
+
+En el Perú 1 millón 575 mil personas presentan algún tipo de discapacidad. (2013). Retrieved 18 December 2021, from https://www.inei.gob.pe/prensa/noticias/en-el-peru-1-millon-575-mil-personas-presentan-alg/
+
+Francke, P y Cordero, C (2005). El Plan de Igualdad de Oportunidades para las Personas con Discapacidad: Balance y Propuesta: Trabajo preparado para la COMISIÓN ESPECIAL DE ESTUDIO SOBRE DISCAPACIDAD del Congreso de la República del Perú.
+
+Presentación. Sociedad y Discapacidad, ONG (2021). Retrieved 20 December 2021, from https://sodisperu.org/
+
+Instituto Nacional de Estadística e Informatica (2019). Encuesta Nacional Hogares sobre Condiciones de Vida y Pobreza [Conjunto de datos]. INEI. 
+
+Vidal-García, J (2021). LA PARTICIPACION CIUDADANA DE LAS PERSONAS CON DISCAPACIDAD. Biotempo, 18 (1), 11-20.
+https://revistas.urp.edu.pe/index.php/Biotempo/article/view/3767/4747
+
+# Metodología 
+
+Respecto a la encuesta, vemos que el diseño de esta es uno no experimental. Esta es una encuesta de derecho, lo que quiere decir que la población estudiada es conformada por los residentes habituales que son miembros del hogar. Esta encuesta fue realizada en el área urbana y rural en los 24 departamentos del país y en la Provincia Constitucional del Callao, en 22,657 viviendas particulares a nivel nacional entre Julio del 2012 y Marzo del 2013. Las unidades de investigación son la vivienda particular, el hogar y miembro del hogar, mientras que los instrumentos para la recolección de datos fueron un cuestionario para el registro de viviendas y un cuestionario para las personas con alguna discapacidad. El método para la recolección de estos datos fue la entrevista directa de parte del personal capacitado. 
+
+Acerca del diseño muestral, la población estudiada fueron personas residentes de las viviendas del área urbana y área rural del país, sin embargo, se excluyeron del estudio a la población residente en viviendas colectivas como cárceles, cuarteles, hospitales, claustros religiosos, etc. Como marco muestral, se tiene como fuente principal la información estadística y cartográfica de los Censos Nacionales del 2007: XI de Población y VI de Vivienda. Los niveles de inferencia requeridos fueron: Nacional, Nacional Urbano, Nacional Rural, Departamento, Costa Urbana y Costa Rural, Sierra Urbana y Sierra Rural, Selva Urbana y Selva Rural, Lima Metropolitana, Provincia Constitucional del Callao, Región Lima (Provincias de Lima). La muestra es probabilística, estratificada, de áreas, bietápica e independiente en cada ámbito de inferencia propuesto. 
+
+Existieron dos etapas de muestreo. En la primera, (selección de UPM: conglomerados), se ha utilizado la *selección sistemática con probabilidad proporcional al tamaño (PPT) de viviendas*. En la segunda, (selección de USM: viviendas), pasaron a formar parte de la muestra todas las viviendas del conglomerado (probabilidad igual a la unidad). Como dato adicional, en las viviendas no se realiza submuestreo alguno, procediéndose a entrevistar a todas las personas residentes en ella a la fecha de la encuesta. Se señala que el nivel de confianza de estos resultados es del 95%.
+
+Por último, la unidad de muestreo primaria es el conglomerado (área que tiene 140 viviendas particulares aproximadamente), y la unidad secundaria es la vivienda particular. La muestra estuvo conformada por 1858 conglomerados, de las cuales se esperó registrar aproximadamente 223, 000 viviendas, y lograr entrevistar 22,657 viviendas donde residen hogares con alguna persona con discapacidad.
+
+# Hallazgos
+
+*VARIABLE DEPENDIENTE: PARTICIPACIÓN EN AGRUPACIONES DE PERSONAS CON DISCAPACIDAD*
+```{r}
+data$`P917$01`[data$`P917$01` == "9"] <- NA
+
+```
+
+```{r}
+str(data$`P917$01`)
+str(data$`P917$02`)
+str(data$`P917$03`)
+str(data$`P917$04`)
+str(data$`P917$05`)
+str(data$`P917$06`)
+str(data$`P917$07`)
+str(data$`P917$08`)
+str(data$`P917$09`)
+str(data$`P917$10`)
+str(data$`P917$11`)
+```
+
+```{r}
+table(data$`P917$01`)
+table(data$`P917$02`)
+table(data$`P917$03`)
+table(data$`P917$04`)
+table(data$`P917$05`)
+table(data$`P917$06`)
+table(data$`P917$07`)
+table(data$`P917$08`)
+table(data$`P917$09`)
+table(data$`P917$10`)
+table(data$`P917$11`)
+```
+
+```{r}
+str(data$`P917$01`)
+str(data$`P917$03`)
+str(data$`P917$08`)
+str(data$`P917$10`)
+```
+```{r}
+data$agrup=as.factor(data$`P917$01`)
+levels(data$agrup) = c("no", "si")
+table(data$agrup)
+
+```
+
+En este caso, la variable que nos interesa entre toda la población encuestada, posee 540 ciudadanos con alguna discapacidad que sí es participe de la Agrupación de Personas con Discapacidad
+
+
+*VARIABLE INDEPENDIENTE: PROGRAMAS SOCIALES*
+
+```{r}
+str(data$"P916$01")
+str(data$"P916$02")
+str(data$"P916$03")
+str(data$"P916$04")
+str(data$"P916$05")
+str(data$"P916$06")
+str(data$"P916$07")
+str(data$"P916$08")
+str(data$"P916$09")
+str(data$"P916$10")
+str(data$"P916$11")
+str(data$"P916$12")
+str(data$"P916$13")
+str(data$"P916$14")
+str(data$"P916$15")
+str(data$"P916$16")
+
+
+```
+```{r}
+table(data$`P916$01`)
+table(data$`P916$02`)
+table(data$`P916$03`)
+table(data$`P916$04`)
+table(data$`P916$05`)
+table(data$`P916$06`)
+table(data$`P916$07`)
+table(data$`P916$08`)
+table(data$`P916$09`)
+table(data$`P916$10`)
+table(data$`P916$11`)
+table(data$`P916$12`)
+table(data$`P916$13`)
+table(data$`P916$14`)
+table(data$`P916$15`)
+table(data$`P916$16`)
+```
+
+```{r}
+data$`P916$01`[data$`P916$01` == "9"] <- NA
+data$`P916$02`[data$`P916$02` == "9"] <- NA
+data$`P916$03`[data$`P916$03` == "9"] <- NA
+data$`P916$04`[data$`P916$04` == "9"] <- NA
+data$`P916$05`[data$`P916$05` == "9"] <- NA
+data$`P916$06`[data$`P916$06` == "9"] <- NA
+data$`P916$07`[data$`P916$07` == "9"] <- NA
+data$`P916$08`[data$`P916$08` == "9"] <- NA
+data$`P916$09`[data$`P916$09` == "9"] <- NA
+data$`P916$10`[data$`P916$10` == "9"] <- NA
+data$`P916$11`[data$`P916$11` == "9"] <- NA
+data$`P916$12`[data$`P916$12` == "9"] <- NA
+data$`P916$13`[data$`P916$13` == "9"] <- NA
+data$`P916$14`[data$`P916$14` == "9"] <- NA
+data$`P916$15`[data$`P916$15` == "9"] <- NA
+data$`P916$16`[data$`P916$16` == "9"] <- NA
+
+
+```
+
+```{r}
+table(data$`P916$01`)
+table(data$`P916$02`)
+table(data$`P916$03`)
+table(data$`P916$04`)
+table(data$`P916$05`)
+table(data$`P916$06`)
+table(data$`P916$07`)
+table(data$`P916$08`)
+table(data$`P916$09`)
+table(data$`P916$10`)
+table(data$`P916$11`)
+table(data$`P916$12`)
+table(data$`P916$13`)
+table(data$`P916$14`)
+table(data$`P916$15`)
+table(data$`P916$16`)
+```
+Optamos por eliminar los programas educativos (que corresponden a las variables P916$11 y P916$12), debido a que PRONABEC solo posee "No usuarios" dentro en los encuestados de esta base de datos, y por otro lado eliminamos Beca 18 debido a que dentro de esta base de datos posee solo 1 usuario. Procedemos a convertir las demás variables en dicotómicas.
+
+*Convertir variables a dicotómicas*
+```{r}
+data$inabif=as.factor(data$`P916$01`)
+levels(data$inabif) = c("no", "si")
+table(data$inabif)
+
+data$cunamas=as.factor(data$`P916$02`)
+levels(data$cunamas) = c("no", "si")
+table(data$cunamas)
+
+data$violencia=as.factor(data$`P916$03`)
+levels(data$violencia) = c("no", "si")
+table(data$violencia)
+
+data$juntos=as.factor(data$`P916$04`)
+levels(data$juntos) = c("no", "si")
+table(data$juntos) 
+
+data$devida=as.factor(data$`P916$05`)
+levels(data$devida) = c("no", "si")
+table(data$devida)
+
+data$pension=as.factor(data$`P916$06`)
+levels(data$pension) = c("no", "si")
+table(data$pension) 
+
+data$pronainf=as.factor(data$`P916$07`)
+levels(data$pronainf) = c("no", "si")
+table(data$pronainf)
+
+data$pronaesc=as.factor(data$`P916$08`)
+levels(data$pronaesc) = c("no", "si")
+table(data$pronaesc) 
+
+data$vaso=as.factor(data$`P916$09`)
+levels(data$vaso) = c("no", "si")
+table(data$vaso) 
+
+data$comedor=as.factor(data$`P916$10`)
+levels(data$comedor) = c("no", "si")
+table(data$comedor) 
+
+data$jovenes=as.factor(data$`P916$13`)
+levels(data$jovenes) = c("no", "si")
+table(data$jovenes)
+
+data$trab=as.factor(data$`P916$14`)
+levels(data$trab) = c("no", "si")
+table(data$trab)
+
+data$labper=as.factor(data$`P916$15`)
+levels(data$labper) = c("no", "si")
+table(data$labper)
+
+data$techo=as.factor(data$`P916$16`)
+levels(data$techo) = c("no", "si")
+table(data$techo)
+
+
+```
+Usaremos 5 variables (Pertenencia al programa Juntos (juntos), Pension 65 (pension),  Programa nacional de asistencia alimentaria PRONAA Escolar (pronaesc), el programa Vaso de leche (vaso), el programa Comedor popular (comedor) y el programa Techo propio (techo)) debido a que son las que poseen más usuarios.
+
+Así, nuestra variable dependiente sería *participación en agrupaciones de personas con discapacidad* (agrup) y las independientes serían *juntos*, *pronaesc*, *vaso*, *comedor*, *pension" y *techo*. Por último, se propone elaborar un modelo de regresión logística binomial debido a que la variable dependiente es dicotómica (si participa o no en agrupacion de personas con discapacidad.
+
+## Modelo de Regresión Logística Binaria
+
+```{r}
+data1=data[,c("agrup", "pronaesc", "vaso", "comedor", "techo", "pension", "juntos")]
+```
+
+```{r}
+str(data1)
+```
+
+```{r}
+modelo1 = glm(data1$agrup ~ data1$pronaesc + data1$vaso + data1$comedor + data1$techo + data1$pension + data1$juntos, family = binomial(link="logit"))
+summary(modelo1)
+
+```
+En primer lugar, vemos el p valor del intercepto. Este es menor a 0.05, por tanto rechazamos la h0 y el modelo SÍ ES VÁLIDO. 
+
+Procedemos a revisar el p valor de cada variable. En este caso, vemos que todas las variables son significantes para el modelo (es decir, sus p valores son menores a 0.05), sin embargo, la pertenencia al programa social Techo tanto como al de Juntos, no es significativo para este. Por tanto, procedemos a retirar estas variables del modelo.
+
+## Primer hallazgo
+No se podrá saber en qué medida los usuarios del programa social Juntos poseen una participación ciudadana más activa en las Agrupaciones de Personas con Discapacidad debido a que este programa social no es significativo para el modelo que explicaría la variable de participacion en dichas Agrupaciones.
+
+```{r}
+modelo2 = glm(data1$agrup ~ data1$pronaesc + data1$vaso + data1$comedor + data1$pension, family = binomial(link="logit"))
+summary(modelo2)
+
+```
+Vemos con el pseudo r cuadrado cuánto es que explica:
+
+Pseudo r cuadrado: 
+```{r}
+1-( 5571.3 /5647.3 )
+```
+Así, quedamos con un modelo de 4 variables independientes (pronaesc, vaso, comedor y pension) que explicarían a la variable dependiente un 1,34%, lo cual es un porcentaje bajo pero no raro en modelos logísticos binomiales. 
+
+```{r}
+library(stargazer)
+stargazer(modelo1, modelo2, type="text")
+```
+
+Ahora, veremos cuanta relevancia tiene cada variable sobre la variable dependiente (Participacion en agrupación de personas discapacitadas)
+```{r}
+exp(coef(modelo2))
+
+```
+Si una persona es usuaria del Programa nacional de asistencia alimentaria, las probabilidades de que participe en Agrupaciones de personas con discapacidad disminuye en 0.441 veces.
+
+Si una persona es usuaria del programa social de Vaso de leche, las probabilidades de que participe en Agrupaciones de personas con discapacidad aumenta en  2.4905 veces, es decir en un 149,05%
+
+Si una persona es usuaria del Programa de Comedores sociales, las probabilidades de que participe en Agrupaciones de personas con discapacidad aumenta en 2.714 veces, es decir en un 171,4%
+
+Si una persona es usuaria del Programa nacional Pension 65, las probabilidades de que participe en Agrupaciones de personas con discapacidad disminuye en  0.2318 veces.
+
+```{r}
+numerador1 = ( 0.01373475+(0.441*1)+(2.4905*0)+( 2.7148*0)+( 0.2318*0))
+denominador1 = 1+numerador1
+prob1 = numerador1/denominador1
+prob1
+```
+Si la  con discapacidad, entre los programas sociales señalados, solo es usuaria del PRONAA, la probabilidad de que pertenezca a Agrupaciones de personas discapacitadas aumenta en un 31,2%
+
+```{r}
+numerador2 = ( 0.01373475+(0.441*0)+(2.4905*1)+( 2.7148*0)+( 0.2318*0))
+denominador2 = 1+numerador2
+prob2 = numerador2/denominador2
+prob2
+```
+Por otro lado, si es solo usuaria del programa social vaso de leche, la la probabilidad de que pertenezca a Agrupaciones de personas discapacitadas aumenta en un 71,46%
+
+```{r}
+numerador3= ( 0.01373475+(0.441*0)+(2.4905*0)+( 2.7148*1)+( 0.2318*0))
+denominador3 = 1+numerador3
+prob3 = numerador3/denominador3
+prob3
+```
+Por otro lado, el porcentaje aumenta si la persona con discapacidad SOLO es usuaria de el programa social de comedores sociales. Si lo es, la probabilidad de que pertenezca a Agrupaciones de personas discapacitadas aumenta en un 73%
+
+```{r}
+numerador4 = ( 0.01373475+(0.441*0)+(2.4905*0)+( 2.7148*0)+( 0.2318*1))
+denominador4 = 1+numerador4
+prob4 = numerador4/denominador4
+prob4
+```
+Como dato adicional, si la persona con discapacidad solo pertenece al programa social de Pension 65 (que solo es apto para adultos mayores), las es de que pertenezca a Agrupaciones de personas discapacitadas solo aumentan en un 19% 
+
+```{r}
+numerador5= ( 0.01373475+(0.441*0)+(2.4905*0)+( 2.7148*0)+( 0.2318*0))
+denominador5 = 1+numerador5
+prob5 = numerador5/denominador5
+prob5
+```
+Sin embargo, si la persona con discapacidad no es usuaria de ningún programa social señalado, tales como el Programa nacional de asistencia alimentaria escolar, Vaso de leche, Comedores populares o Pensión 65, la probabilidad de que participe en las Agrupaciones de personas discapacitadas aumenta en solo un 1,3%
+
+```{r}
+numerador6 = ( 0.01373475+(0.441*1)+(2.4905*1)+( 2.7148*1)+( 0.2318*1))
+denominador6 = 1+numerador6
+prob6 = numerador6/denominador6
+prob6
+```
+Como último punto, se resalta que si la persona con discapacidad es usuaria de los 4 programas sociales, las probabilidades de que sea parte de la Asociación de personas discapacitadas aumenta en un 85,4%, lo cual es una probabilidad alta. 
+
+## Segundo hallazgo
+
+Si bien el que una persona sea usuaria del Programa nacional de asistencia alimentaria escolar aumenta la probabilidad de que participe en Agrupaciones de personas con discapacidad en un 31%, no son estos los que poseen una mayor participación en estas Agrupaciones. Los programas sociales que aumentan más la probabilidad de que se sea parte de estas Agrupaciones son el programa de vaso de leche y comedores sociales. 
+
+## Tercer Hallazgo
+
+El que la población discapacitada sea parte de programas sociales SÍ aumenta la probabilidad de ser parte de Agrupaciones para personas con discapacidad. Como ya se vió, esto aumenta un 85,4% estas probabilidades. 
+
+# Conclusiones
+
+En conclusión, una de las hipótesis planteadas fue que aquellos usuarios del programa social Programa nacional de asistencia alimentaria PRONAA Escolar son los que poseen una participación ciudadana más activa en las Agrupaciones de personas discapacitadas. Sin embargo, se rechazó esta hipótesis debido a que los usuarios con discapacidad de los programas sociales de vaso de leche y comedores sociales son aquellos que, dentro de las variables seleccionadas, aumentan más la probabilidad de que las personas con discapacidad pertenezcan a dichas Agrupaciones.  
+
+La otra hipótesis planteada fue que la población discapacitada que es usuaria de programas sociales tiene una participación ciudadana más activa en las Agrupaciones que las que no son partícipes de algún programa social. Esto se ha confirmado con el modelo planteado, al confirmar que hay una gran diferencia entre la población con discapacidad que es usuaria de programas sociales que con las que no. Mientras que el que esta población sea usuaria de los cuatro programas sociales seleccionados aumenta en un 85,4% la probabilidad de que sea parte de Agrupaciones de personas con discapacidad, el que no sea parte aumenta esta probabilidad solo en un 1,3%.
+
+Así, esta información resulta útil e interesante al hallar que si una persona perteneciente a la población discapacitada es usuaria de alguno de los programas sociales planteados (Pensión 65, Programa Nacional de Alimentación Escolar, Vaso de Leche, Comedores populares), esta aumentaría su probabilidad de pertenecer a Agrupaciones de Personas con Discapacidad. Esto último sería beneficioso debido a que en estas, como se mencionó anteriormente, se garantiza el ejercicio de derechos de esta población, además de poder ser representantes de estas, expresar así sus necesidades y poder incluir estas en la agenda política y/o social. Por ello, se resalta la importancia y necesidad de plantear mayor interés e incentivos en los programas sociales planteados para la población con discapacidad, ya que esto posibilitaría una mayor participación ciudadana de estos al ser mayor visibilizados en el plano social y político. 
+
+Finalmente, los límites encontrados en esta investigación ha sido la escasa información reciente disponible en la web sobre la población con discapacidad. La base de datos utilizada ha sido obtenida de la primera y más reciente Encuesta Nacional Especializada Sobre Discapacidad, sin embargo esta fue realizada en el 2012. Existen otros datos más recientes a la fecha (2021), sin embargo, no son encuestas completas como esta. Se recomienda generar más encuestas especializadas actuales para ser más específicos en los resultados obtenidos. Esto debido a que en la actualidad, luego de nueve años de aplicada esta encuesta, existen más Agrupaciones de población con discapacidad con otros objetivos y hay programas sociales que han sido desactivados, como el PRONAA.
+
+# ANEXO 1: DICCIONARIO DE VARIABLES
+
+![Anexo 1](ANEXO_pages-to-jpg-0001.jpg){width=90%}
+![Anexo 1](ANEXO_pages-to-jpg-0002.jpg){width=90%}
